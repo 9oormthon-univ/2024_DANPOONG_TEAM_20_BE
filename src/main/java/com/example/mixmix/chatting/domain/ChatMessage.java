@@ -10,13 +10,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Getter
-@Setter
+@NoArgsConstructor
 public class ChatMessage {
 
     @Id
@@ -33,4 +35,12 @@ public class ChatMessage {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chat_room_id", nullable = false)
     private ChatRoom chatRoom;
+
+    @Builder
+    public ChatMessage(String sender, String content, ChatRoom chatRoom, LocalDateTime timestamp) {
+        this.sender = sender;
+        this.content = content;
+        this.chatRoom = chatRoom;
+        this.timestamp = timestamp;
+    }
 }

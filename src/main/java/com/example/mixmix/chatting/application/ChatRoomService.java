@@ -49,7 +49,9 @@ public class ChatRoomService {
                 frommember.getId(),
                 toMember.getId(),
                 frommember.getName(),
-                null, 0);
+                null,
+                0,
+                toMember.getPicture());
     }
 
     public ChatRoomResList getChatRooms(String email, Pageable pageable) {
@@ -67,6 +69,7 @@ public class ChatRoomService {
                         .loginUserName(member.getName())
                         .recentMessage(getRecentMessage(chatRoom))
                         .unreadNotification(notificationRepository.countUnreadChatNotifications(member, chatRoom))
+                        .memberImage(getOtherMemberImage(chatRoom, member))
                         .build()
                 )
                 .toList();
@@ -78,6 +81,14 @@ public class ChatRoomService {
                 .build();
 
         return ChatRoomResList.of(chatRoomResDtos, pageInfoResDto);
+    }
+
+    private String getOtherMemberImage(ChatRoom chatRoom, Member currentUser) {
+        if (chatRoom.getFromMember().getId().equals(currentUser.getId())) {
+            return chatRoom.getToMember().getPicture();
+        } else {
+            return chatRoom.getFromMember().getPicture();
+        }
     }
 
     private String getRecentMessage(ChatRoom chatRoom) {
