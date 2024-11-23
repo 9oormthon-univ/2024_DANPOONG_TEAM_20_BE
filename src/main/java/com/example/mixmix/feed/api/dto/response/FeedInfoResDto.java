@@ -14,7 +14,8 @@ public record FeedInfoResDto(
         FeedType feedType,
         Long memberId,
         Long feedId,
-        LocalDateTime createdAt
+        LocalDateTime createdAt,
+        String memberName
 ) {
     public static FeedInfoResDto of(Feed feed, String feedImage) {
 
@@ -27,6 +28,7 @@ public record FeedInfoResDto(
                 .memberId(feed.getMember().getId())
                 .feedId(feed.getId())
                 .createdAt(feed.getCreatedAt())
+                .memberName(feed.getMember().getName())
                 .build();
     }
 }
