@@ -43,6 +43,7 @@ MixMix 라는 이름처럼, 다양한 국적의 유학생들이 언어의 장벽
 <br/>
 
 ## ☁️ 시스템 아키텍처
+![KakaoTalk_Photo_2024-11-23-17-44-21](https://github.com/user-attachments/assets/b2cc9cec-2c5d-45b4-8a92-fae8f0201e95)
 
 <br/>
 
@@ -59,11 +60,13 @@ MixMix 라는 이름처럼, 다양한 국적의 유학생들이 언어의 장벽
 ![jsonwebtokens](https://img.shields.io/badge/jsonwebtokens-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 ![DeepL](https://img.shields.io/badge/deepl-0F2B46?style=for-the-badge&logo=deepl&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=openai&logoColor=white)
+![webSocket](https://img.shields.io/badge/websocket-EC672C?style=for-the-badge&logo=websocket&logoColor=white)
 
 ### Database
 ![mysql](https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![amazonwebservices](https://img.shields.io/badge/amazonwebservices-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
 ![amazonec2](https://img.shields.io/badge/amazonec2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=FFFFFF)
+![amazons3](https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazons3&logoColor=FFFFFF)
 
 ### UI/UX
 ![figma](https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=FFFFFF)
