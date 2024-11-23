@@ -49,7 +49,9 @@ public class FeedCustomRepositoryImpl implements FeedCustomRepository {
                         feed.feedType,
                         feed.member.id,
                         feed.id,
-                        feed.createdAt
+                        feed.createdAt,
+                        feed.member.name,
+                        feed.member.picture
                 ))
                 .from(feed)
                 .where(condition)
@@ -68,6 +70,8 @@ public class FeedCustomRepositoryImpl implements FeedCustomRepository {
                         .memberId(feedInfoResDto.memberId())
                         .feedId(feedInfoResDto.feedId())
                         .createdAt(feedInfoResDto.createdAt())
+                        .memberName(feedInfoResDto.memberName())
+                        .memberImage(feedInfoResDto.memberImage())
                         .build()
                 )
                 .toList();
