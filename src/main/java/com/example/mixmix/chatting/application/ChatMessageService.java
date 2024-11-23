@@ -1,5 +1,6 @@
 package com.example.mixmix.chatting.application;
 
+import com.example.mixmix.chatting.api.dto.request.ChatMessageReqDto;
 import com.example.mixmix.chatting.api.dto.response.ChatMessageResList;
 import com.example.mixmix.chatting.api.dto.response.ChatMessageResDto;
 import com.example.mixmix.chatting.domain.ChatMessage;
@@ -30,13 +31,10 @@ public class ChatMessageService {
 
     @Transactional
     public void saveMessage(String roomId, String sender, String content) {
-        ChatMessage chatMessage = new ChatMessage();
         ChatRoom chatRoom = chatRoomRepository.findById(Long.parseLong(roomId)).
                 orElseThrow(ExistsChatRoomException::new);
-        chatMessage.setChatRoom(chatRoom);
-        chatMessage.setSender(sender);
-        chatMessage.setContent(content);
-        chatMessage.setTimestamp(LocalDateTime.now());
+
+        ChatMessage chatMessage = ChatMessageReqDto.toEntity(chatRoom, content, sender, LocalDateTime.now());
 
         ChatMessage savedChatMessage = chatMessageRepository.save(chatMessage);
 
